@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import './zipSearch.css'
 import axios from 'axios'
+import ZipDisplay from './zipDisplay.js'
 
 class ZipSearch extends Component {
 
@@ -8,16 +9,7 @@ class ZipSearch extends Component {
     super(props)
 
     this.state = {
-      data: [
-          {
-            id: '11201',
-            city: 'brooklyn',
-            state: 'NY',
-            location: '(40.71, -73.99)',
-            popEstimate: '1234567',
-            totalWages: '88888654'
-        }
-      ]
+      data:[]
     }
   }
 
@@ -25,9 +17,10 @@ class ZipSearch extends Component {
 
     try {
       let {data} = await axios.get('http://ctp-zip-api.herokuapp.com/zip/' + zip);
-
+      this.setState({data});
       data.forEach(function(element){
           console.log(element);
+          console.log(element.Zipcode, element.City);
       });
 
     } catch(err){
@@ -44,19 +37,37 @@ class ZipSearch extends Component {
 
       } else {
           console.log("Not A Zipcode");
+
       }
   }
 
   render(){
+    let place = this.state.data;
+    let cityInfo = place.map((place) =>
+      <div>
+      <ul>
+       <li>{place.Zipcode}</li>
+       <li>{place.City}</li>
+       <li>{place.State}</li>
+       <li>{place.Lat}</li>
+       <li>{place.Long}</li>
+       <li>{place.EstimatedPopulation}</li>
+      </ul>
+
+      <ZipDisplay data={place}/>
+      </div>
+    );
+
     return(
        <div className="container">
           <div className="zip-search">
             <form>
               <label>
                   Zip Code
-                  <input name="zipField" value={this.state.id} type="text" placeholder="try 11201" onChange={this.onChangeHandle}/>
+                  <input name="zipField" type="text" placeholder="try 11201" onChange={this.onChangeHandle}/>
               </label>
             </form>
+            <div> {cityInfo}</div>
           </div>
        </div>
     );
