@@ -1,0 +1,10 @@
+.nav {
+  text-align: center;
+}
+.nav-header {
+  background-color: #222;
+  color: white;
+  font-size: 1.25rem;
+  margin: 0;
+  padding: 1rem;
+}
