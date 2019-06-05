@@ -1,19 +1,31 @@
 .container {
-  text-align: center;
-  display:flex;
-  flex-direction: column;
-  justify-content:center;
-  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  width:100%;
 }
 .zip-display{
   font-weight: bold;
-  text-align: center;
   padding: 1rem 2rem 1rem;
   margin: 0.25rem;
   border-radius: 0.5rem;
   width: 40%;
   min-width: 9rem;
   border: solid 1px rgba(0,0,0, 0.05);
-  background-color: #feb2c3;
+  background-color: #fbe2c3;
+  border-bottom: solid 4px #f7931a;
   color: #808080;
+}
+
+.head{
+  border-radius: 0.5rem;
+  border: solid 1px rgba(0,0,0, 0.05);
+  background-color: #ececec;
+  color: #808080;
+}
+.city-list {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+
 }

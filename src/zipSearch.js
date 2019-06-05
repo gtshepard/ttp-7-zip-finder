@@ -44,21 +44,11 @@ class ZipSearch extends Component {
   render(){
     let place = this.state.data;
     let cityInfo = place.map((place) =>
-      <div>
-      <ul>
-       <li>{place.Zipcode}</li>
-       <li>{place.City}</li>
-       <li>{place.State}</li>
-       <li>{place.Lat}</li>
-       <li>{place.Long}</li>
-       <li>{place.EstimatedPopulation}</li>
-      </ul>
-
       <ZipDisplay data={place}/>
-      </div>
     );
 
     return(
+      <div>
        <div className="container">
           <div className="zip-search">
             <form>
@@ -67,9 +57,11 @@ class ZipSearch extends Component {
                   <input name="zipField" type="text" placeholder="try 11201" onChange={this.onChangeHandle}/>
               </label>
             </form>
-            <div> {cityInfo}</div>
           </div>
        </div>
+           <div> {cityInfo}</div>
+       </div>
+
     );
   }
 }
