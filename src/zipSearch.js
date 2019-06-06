@@ -56,33 +56,9 @@ class ZipSearch extends Component {
                   </label>
                </form>
             </div>
-
-            <div className="zip-flex-container">
-                <div className="zip-box"> Hi</div>
-                <div className="zip-box">Bye</div>
-                <div className="zip-box">HiBye</div>
-           </div>
+            {cityInfo}
         </div>
       )
-
-    /*
-    return(
-        <div>
-       <div className="container">
-          <div className="zip-search">
-            <form>
-              <label>
-                  Zip Code
-                  <input name="zipField" type="text" placeholder="try 11201" onChange={this.onChangeHandle}/>
-              </label>
-            </form>
-          </div>
-       </div>
-          <div> {cityInfo}</div>
-       </div>
-    );
-    */
-
   }
 }
 export default ZipSearch;
