@@ -1,8 +1,7 @@
 import React, {Component} from 'react'
 import './zipSearch.css'
 import axios from 'axios'
-import ZipDisplay from './zipDisplay.js'
-
+import ZipDisplay from './zipDisplay'
 class ZipSearch extends Component {
 
   constructor(props){
@@ -47,8 +46,28 @@ class ZipSearch extends Component {
       <ZipDisplay data={place}/>
     );
 
+      return (
+        <div className="zip-con">
+            <div className="zip-search">
+               <form>
+                  <label className="form-label">
+                    Zip
+                    <input name="zipField" type="text" placeholder="try 11201" onChange={this.onChangeHandle}/>
+                  </label>
+               </form>
+            </div>
+
+            <div className="zip-flex-container">
+                <div className="zip-box"> Hi</div>
+                <div className="zip-box">Bye</div>
+                <div className="zip-box">HiBye</div>
+           </div>
+        </div>
+      )
+
+    /*
     return(
-      <div>
+        <div>
        <div className="container">
           <div className="zip-search">
             <form>
@@ -59,10 +78,11 @@ class ZipSearch extends Component {
             </form>
           </div>
        </div>
-           <div> {cityInfo}</div>
+          <div> {cityInfo}</div>
        </div>
-
     );
+    */
+
   }
 }
 export default ZipSearch;

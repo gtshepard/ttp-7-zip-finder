@@ -32,7 +32,6 @@ class ZipDisplay extends Component {
                  </ul>
             </div>
             </ul>
-
         </div>
 
       )
