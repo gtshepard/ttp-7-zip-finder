@@ -15,6 +15,7 @@
   width: 40%;
   min-width: 9rem;
   border: solid 1px rgba(0,0,0, 0.05);
-  background-color: #feb2c3;
+  background-color: #ececec;
+  border-bottom: solid 4px #bebebe;
   color: #808080;
 }

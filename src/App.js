@@ -2,11 +2,13 @@ import React from 'react';
 import './App.css';
 import Nav from './nav.js'
 import ZipSearch from './zipSearch.js'
+import ZipDisplay from './zipDisplay.js'
 function App() {
   return (
     <div>
       <Nav/>
       <ZipSearch/>
+
     </div>
   );
 }
